@@ -1,89 +1,70 @@
-public class LString {
+package ru.java;
+public class LString{
     public static void main(String[] args) {
+        // Создание строк
+        String str1 = "Первая строка";
+        String str2 = new String("Вторая строка");
 
-        // Строки не изменяемы!
-        String str1 = "Test";
-        String str2 = "Test" + "Test";
-        String str3 = "Test" + 19; // Приведение к строке
-        String str4 = "Test" + 19 + 1; // Приведение к строке
-        String str5 = "Test" + (19 + 1); // Приведение к строке
+        // Вывод  строк
+        System.out.println("str1 = " + str1);
+        System.out.println("str2 = " + str2);
 
-        System.out.println(str1);
-        System.out.println(str2);
-        System.out.println(str3);
-        System.out.println(str4);
-        System.out.println(str5);
-        System.out.println(String.join("-!-", "one", "two", "three"));
-
-        System.out.println(str2.substring(0,2)); // с i-ой позиции по j-1
+        // Длина строки
+        int length = str1.length();
+        System.out.println("Длина str1 = " + length);
 
         // Сравнение строк
-        String str6 = "Hello";
-        String str7 = "Hello";
-        String str8 = "H"+"e"+"l"+"l"+"o";
+        boolean isEqual = str1.equals(str2);
+        System.out.println("str1 и str2 равны? - " + isEqual);
 
-        String tmpStr = "H"+"e"+"l";
-        String str9 = tmpStr +"l"+"o";
+        // Сравнение без учета регистра
+        boolean isEqualIgnoreCase = str1.equalsIgnoreCase("Первая строка");
+        System.out.println("str1 и 'Первая строка' равны без учета регистра? - " + isEqualIgnoreCase);
 
-        System.out.println("1: " + (str6 == str7));   // true - один адрес памяти
-        System.out.println("2: " + (str6 == "Hello")); // true - один адрес памяти
+        // Извлечение подстроки
+        String substring = str2.substring(4, 9);
+        System.out.println("Подстрока из str2 (с 4 по 9) = " + substring);
 
-        System.out.println("3: " + (str9 == str7)); // false - разные адреса памяти
-        System.out.println("4: " + (str9 == "Hello")); // false - разные адреса памяти
+        // Поиск индекса подстроки
+        int index = str1.indexOf("строка");
+        System.out.println("Индекс 'строка' в str1 = " + index);
 
-        System.out.println("5: " + (str9.equals(str7))); // true - одно содержимое
-        System.out.println("6: " + (str9.equals("Hello"))); // true - одно содержимое
+        // Замена подстроки
+        String replacedStr = str1.replace("строка", "строчечка");
+        System.out.println("Замененная строка: " + replacedStr);
 
-        // Нулевая строка
-        String str10 = null;
-
-        if (str10 == null) {
-            System.out.println("10-1: null string");
-        } else {
-            System.out.println("10-1: NOT null string");
+        // Разделение строки на массив подстрок
+        String csv = "значение1,значение2,значение3";
+        System.out.println("Строка с разделителями = " + csv);
+        String[] values = csv.split(",");
+        System.out.println("Разделенные значения: ");
+        for (String value : values) {
+            System.out.println(value);
         }
 
-        str10 = "";
-        if (str10.length() == 0) {
-            System.out.println("10-2: empty string");
-        } else {
-            System.out.println("10-2: NOT empty string");
-        }
+        // Удаление начальных и конечных пробелов
+        String withSpaces = "   Пробелы вокруг   ";
+        System.out.println("Строка с пробелами = " + withSpaces);
+        String trimmed = withSpaces.trim();
+        System.out.println("Строка без пробелов вокруг: " + trimmed);
 
-        if (str10 == null) {
-            System.out.println("10-3: null string");
-        } else {
-            System.out.println("10-3: NOT null string");
-        }
+        // Преобразование числа в строку
+        int number42 = 42;
+        String strNumber42 = String.valueOf(number42);
+        String strNumber422 = "" + number42;
+        System.out.println("Число = " + strNumber42 + " и " + strNumber422);
 
-        String str11 = new String();
-        if (str11.length() == 0) {
-            System.out.println("11: empty string");
-        } else {
-            System.out.println("11: NOT empty string");
-        }
+        //Преобразование числа с форматированием
+        double decimalNumber = 3.14;
+        String formattedStr = String.format("%.2f", decimalNumber);
+        System.out.println("Число с форматированием = " + formattedStr);
 
-        if (str11 == null) {
-            System.out.println("11: null string");
-        } else {
-            System.out.println("11: NOT null string");
-        }
+        // Преобразование строки в число
+        String strNumber34 = "34";
+        int number34 = Integer.parseInt(strNumber34);
+        double decimalNumber34 = Double.parseDouble(strNumber34);
+        System.out.println("Число = " + decimalNumber34);
 
-
-//        StringBuilder sb1 = "TestString";
-        StringBuilder sb1 = new StringBuilder("TestString");
-        sb1.append("12345");
-        sb1.append('d');
-
-        String str12 = sb1.toString();
-
-        System.out.println(sb1);
-        System.out.println(str12);
-
-        // замена символа в 0-ой позиции
-        sb1.setCharAt(0, 'Z');
-        System.out.println(sb1);
 
     }
-}
 }
