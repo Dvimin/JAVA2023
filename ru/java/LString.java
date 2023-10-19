@@ -64,7 +64,5 @@ public class LString{
         int number34 = Integer.parseInt(strNumber34);
         double decimalNumber34 = Double.parseDouble(strNumber34);
         System.out.println("Число = " + decimalNumber34);
-
-
     }
 }
