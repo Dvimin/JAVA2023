@@ -3,7 +3,6 @@ package works;
 public class Lab5 {
     public static void main(String[] args) {
 
-        System.out.println("Запуск пошел!)");
         // Проверяем, есть ли аргументы командной строки
         if (args.length == 0) {
             System.out.println("Нет аргументов командной строки.");
