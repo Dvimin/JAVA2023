@@ -93,10 +93,4 @@ public class Lab8 {
         printClassMethods(instance);
         printClassInterfaces(instance);
     }
-
-    public static void main(String[] args) {
-        MyClass mikhail = new MyClass("Ivan", 20);
-        Class<?> me = mikhail.getClass();
-        printClassInfo(me);
-    }
 }
