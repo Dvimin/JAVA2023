@@ -10,7 +10,6 @@ public class Lab10 {
             System.out.println("Exception: " + e.getMessage());
         }
     }
-
     public static void main(String[] args) {
 
         TripleContainer<Integer> inst1 = new TripleContainer<>(2, 2, 5);
